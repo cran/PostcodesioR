@@ -7,11 +7,13 @@
 postcode_lookup(postcode)
 }
 \arguments{
-\item{postcode}{A string. One valid UK postcode. This function is case- and space-insensitive.
-For more than one postcode use \code{\link{bulk_postcode_lookup}}.}
+\item{postcode}{A string. One valid UK postcode.
+This function is case- and space-insensitive.
+For more than one postcode use \code{\link{bulk_postcode_lookup}}.
+For Scottish postcodes use \code{\link{scottish_postcode_lookup}}.}
 }
 \value{
-A data frame. Returns all available data if found. Returns 404 if postcode does not exist.
+A data frame. Returns all available data if found. Returns NAs if postcode does not exist (404).
 \itemize{
 \item \code{postcode} Postcode. All current ('live') postcodes within the United Kingdom,
 the Channel Islands and the Isle of Man, received monthly from Royal Mail.
@@ -106,6 +108,7 @@ Lookup a postcode.
 \donttest{
 postcode_lookup("EC1Y8LX")
 postcode_lookup("EC1Y 8LX") # spaces are ignored
+postcode_lookup("DE3 5LF") # terminated postcode returns NAs
 }
 
 }

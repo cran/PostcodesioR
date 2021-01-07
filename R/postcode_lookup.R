@@ -5,12 +5,14 @@
 #' @importFrom httr GET
 #' @importFrom httr warn_for_status
 #'
-#' @param postcode A string. One valid UK postcode. This function is case- and space-insensitive.
+#' @param postcode A string. One valid UK postcode.
+#' This function is case- and space-insensitive.
 #' For more than one postcode use \code{\link{bulk_postcode_lookup}}.
+#' For Scottish postcodes use \code{\link{scottish_postcode_lookup}}.
 #'
 #' @export
 #'
-#' @return A data frame. Returns all available data if found. Returns 404 if postcode does not exist.
+#' @return A data frame. Returns all available data if found. Returns NAs if postcode does not exist (404).
 #'  * \code{postcode} Postcode. All current ('live') postcodes within the United Kingdom,
 #'  the Channel Islands and the Isle of Man, received monthly from Royal Mail.
 #'  2, 3 or 4-character outward code, single space and 3-character inward code.
@@ -99,6 +101,7 @@
 #' \donttest{
 #' postcode_lookup("EC1Y8LX")
 #' postcode_lookup("EC1Y 8LX") # spaces are ignored
+#' postcode_lookup("DE3 5LF") # terminated postcode returns NAs
 #' }
 #'
 postcode_lookup <- function(postcode) {
@@ -118,12 +121,33 @@ postcode_lookup <- function(postcode) {
     r <- content(r)
     pc_result <- r[["result"]]
     take_names <- setdiff(names(pc_result), "codes")
-    pc_codes <- as.data.frame(pc_result$codes, stringsAsFactors = FALSE)
+    pc_codes <- as.data.frame(do.call(cbind, pc_result$codes), stringsAsFactors = FALSE)
     colnames(pc_codes) <- paste0(names(pc_codes), "_code")
     pc_result[sapply(pc_result, is.null)] <- list(NA)
     pc_df <- cbind(as.data.frame(pc_result[take_names],
                                  stringsAsFactors = FALSE),
                    pc_codes)
+    return(pc_df)
+  }
+  # if error (404) return NAs
+  if (status_code(r) == 404) {
+    print(paste("Postcode", postcode, "is incorrect or expired."))
+    pc_df <-
+      structure(list(postcode = postcode, quality = NA, eastings = NA,
+                     northings = NA, country = NA, nhs_ha = NA,
+                     longitude = NA, latitude = NA, european_electoral_region = NA,
+                     primary_care_trust = NA, region = NA, lsoa = NA,
+                     msoa = NA, incode = NA, outcode = NA,
+                     parliamentary_constituency = NA,
+                     admin_district = NA, parish = NA,
+                     admin_county = NA, admin_ward = NA, ced = NA, ccg = NA,
+                     nuts = NA, admin_district_code = NA,
+                     admin_county_code = NA, admin_ward_code = NA,
+                     parish_code = NA, parliamentary_constituency_code = NA,
+                     ccg_code = NA, ccg_id_code = NA,
+                     ced_code = NA, nuts_code = NA,
+                     lsoa_code = NA, msoa_code = NA, lau2_code = NA),
+                class = "data.frame", row.names = c(NA, -1L))
     return(pc_df)
   }
 }

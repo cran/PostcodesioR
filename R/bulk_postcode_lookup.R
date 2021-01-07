@@ -20,10 +20,19 @@
 #' }
 #'
 bulk_postcode_lookup <- function(postcodes) {
-  if (!is.list(postcodes))
-    stop("Please provide a list with postcodes.")
+  check_list_limit(postcodes)
   r <- POST("https://api.postcodes.io/postcodes",
             body = postcodes,
             encode = "json")
   extract_results(r)
+}
+
+check_list_limit <- function(x) {
+  if (!is.list(x))
+    stop("Please provide a list with postcodes.")
+  if (length(x) == 0)
+    stop("Please provide a list with more than one postcode")
+  count <- sum(sapply(x, length))
+  if (count > 100)
+    stop("Please provide a list with less than 100 postcodes.")
 }
