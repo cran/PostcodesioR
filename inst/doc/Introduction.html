@@ -12,26 +12,11 @@
 
 <meta name="author" content="Eryk Walczak" />
 
-<meta name="date" content="2021-01-07" />
+<meta name="date" content="2021-11-30" />
 
 <title>Introduction</title>
 
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-});
-</script>
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -43,21 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -77,7 +69,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -135,187 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<style type="text/css">body {
-background-color: #fff;
-margin: 1em auto;
-max-width: 700px;
-overflow: visible;
-padding-left: 2em;
-padding-right: 2em;
-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 14px;
-line-height: 1.35;
-}
-#TOC {
-clear: both;
-margin: 0 0 10px 10px;
-padding: 4px;
-width: 400px;
-border: 1px solid #CCCCCC;
-border-radius: 5px;
-background-color: #f6f6f6;
-font-size: 13px;
-line-height: 1.3;
-}
-#TOC .toctitle {
-font-weight: bold;
-font-size: 15px;
-margin-left: 5px;
-}
-#TOC ul {
-padding-left: 40px;
-margin-left: -1.5em;
-margin-top: 5px;
-margin-bottom: 5px;
-}
-#TOC ul ul {
-margin-left: -2em;
-}
-#TOC li {
-line-height: 16px;
-}
-table {
-margin: 1em auto;
-border-width: 1px;
-border-color: #DDDDDD;
-border-style: outset;
-border-collapse: collapse;
-}
-table th {
-border-width: 2px;
-padding: 5px;
-border-style: inset;
-}
-table td {
-border-width: 1px;
-border-style: inset;
-line-height: 18px;
-padding: 5px 5px;
-}
-table, table th, table td {
-border-left-style: none;
-border-right-style: none;
-}
-table thead, table tr.even {
-background-color: #f7f7f7;
-}
-p {
-margin: 0.5em 0;
-}
-blockquote {
-background-color: #f6f6f6;
-padding: 0.25em 0.75em;
-}
-hr {
-border-style: solid;
-border: none;
-border-top: 1px solid #777;
-margin: 28px 0;
-}
-dl {
-margin-left: 0;
-}
-dl dd {
-margin-bottom: 13px;
-margin-left: 13px;
-}
-dl dt {
-font-weight: bold;
-}
-ul {
-margin-top: 0;
-}
-ul li {
-list-style: circle outside;
-}
-ul ul {
-margin-bottom: 0;
-}
-pre, code {
-background-color: #f7f7f7;
-border-radius: 3px;
-color: #333;
-white-space: pre-wrap; 
-}
-pre {
-border-radius: 3px;
-margin: 5px 0px 10px 0px;
-padding: 10px;
-}
-pre:not([class]) {
-background-color: #f7f7f7;
-}
-code {
-font-family: Consolas, Monaco, 'Courier New', monospace;
-font-size: 85%;
-}
-p > code, li > code {
-padding: 2px 0px;
-}
-div.figure {
-text-align: center;
-}
-img {
-background-color: #FFFFFF;
-padding: 2px;
-border: 1px solid #DDDDDD;
-border-radius: 3px;
-border: 1px solid #CCCCCC;
-margin: 0 5px;
-}
-h1 {
-margin-top: 0;
-font-size: 35px;
-line-height: 40px;
-}
-h2 {
-border-bottom: 4px solid #f7f7f7;
-padding-top: 10px;
-padding-bottom: 2px;
-font-size: 145%;
-}
-h3 {
-border-bottom: 2px solid #f7f7f7;
-padding-top: 10px;
-font-size: 120%;
-}
-h4 {
-border-bottom: 1px solid #f7f7f7;
-margin-left: 8px;
-font-size: 105%;
-}
-h5, h6 {
-border-bottom: 1px solid #ccc;
-font-size: 105%;
-}
-a {
-color: #0033dd;
-text-decoration: none;
-}
-a:hover {
-color: #6666ff; }
-a:visited {
-color: #800080; }
-a:visited:hover {
-color: #BB00BB; }
-a[href^="http:"] {
-text-decoration: underline; }
-a[href^="https:"] {
-text-decoration: underline; }
-
-code > span.kw { color: #555; font-weight: bold; } 
-code > span.dt { color: #902000; } 
-code > span.dv { color: #40a070; } 
-code > span.bn { color: #d14; } 
-code > span.fl { color: #d14; } 
-code > span.ch { color: #d14; } 
-code > span.st { color: #d14; } 
-code > span.co { color: #888888; font-style: italic; } 
-code > span.ot { color: #007020; } 
-code > span.al { color: #ff0000; font-weight: bold; } 
-code > span.fu { color: #900; font-weight: bold; } 
-code > span.er { color: #a61717; background-color: #e3d2d2; } 
-</style>
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
 
 
 
@@ -329,23 +141,26 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Introduction</h1>
 <h4 class="author">Eryk Walczak</h4>
-<h4 class="date">2021-01-07</h4>
+<h4 class="date">2021-11-30</h4>
 
 
 <div id="TOC">
 <ul>
 <li><a href="#installation">Installation</a></li>
-<li><a href="#lookup-postcodes-and-outcodes">Lookup postcodes and outcodes</a><ul>
+<li><a href="#lookup-postcodes-and-outcodes">Lookup postcodes and outcodes</a>
+<ul>
 <li><a href="#single-postcode">Single postcode</a></li>
 <li><a href="#multiple-postcodes">Multiple postcodes</a></li>
 <li><a href="#outward-code-lookup">Outward code lookup</a></li>
 </ul></li>
-<li><a href="#reverse-geocoding">Reverse geocoding</a><ul>
+<li><a href="#reverse-geocoding">Reverse geocoding</a>
+<ul>
 <li><a href="#single-postcode-1">Single postcode</a></li>
 <li><a href="#multiple-postcodes-1">Multiple postcodes</a></li>
 <li><a href="#single-outcode">Single outcode</a></li>
 </ul></li>
-<li><a href="#generate-random-entries">Generate random entries</a><ul>
+<li><a href="#generate-random-entries">Generate random entries</a>
+<ul>
 <li><a href="#postcodes">Postcodes</a></li>
 </ul></li>
 <li><a href="#places">Places</a></li>
@@ -360,20 +175,20 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>PostcodesioR is an API wrapper for postcodes.io. It allows acquiring geographic information about the UK postcodes and geographic coordinates.</p>
 <div id="installation" class="section level2">
 <h2>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">&quot;devtools&quot;</span>)) <span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;erzk/PostcodesioR&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;devtools&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;ropensci/PostcodesioR&quot;</span>)</span></code></pre></div>
 </div>
 <div id="lookup-postcodes-and-outcodes" class="section level2">
 <h2>Lookup postcodes and outcodes</h2>
 <div id="single-postcode" class="section level3">
 <h3>Single postcode</h3>
 <p>Provide a postcode to obtain all available information</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(PostcodesioR)</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>lookup_result &lt;-<span class="st"> </span><span class="kw">postcode_lookup</span>(<span class="st">&quot;EC1Y8LX&quot;</span>)</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#overview</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="kw">str</span>(lookup_result)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PostcodesioR)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>lookup_result <span class="ot">&lt;-</span> <span class="fu">postcode_lookup</span>(<span class="st">&quot;EC1Y8LX&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#overview</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(lookup_result)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    1 obs. of  35 variables:
 ##  $ postcode                       : chr &quot;EC1Y 8LX&quot;
 ##  $ quality                        : int 1
@@ -406,15 +221,15 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##  $ ccg_code                       : chr &quot;E38000240&quot;
 ##  $ ccg_id_code                    : chr &quot;93C&quot;
 ##  $ ced_code                       : chr &quot;E99999999&quot;
-##  $ nuts_code                      : chr &quot;UKI43&quot;
+##  $ nuts_code                      : chr &quot;TLI43&quot;
 ##  $ lsoa_code                      : chr &quot;E01002704&quot;
 ##  $ msoa_code                      : chr &quot;E02000576&quot;
-##  $ lau2_code                      : chr &quot;E05000367&quot;</code></pre>
+##  $ lau2_code                      : chr &quot;E09000019&quot;</code></pre>
 <p>There is another function that returns the same data points but returns a list and allows optional parameters</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>query_result &lt;-<span class="st"> </span><span class="kw">postcode_query</span>(<span class="st">&quot;EC1Y8LX&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">#overview</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">str</span>(query_result)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>query_result <span class="ot">&lt;-</span> <span class="fu">postcode_query</span>(<span class="st">&quot;EC1Y8LX&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#overview</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(query_result)</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 24
 ##   ..$ postcode                  : chr &quot;EC1Y 8LX&quot;
@@ -449,73 +264,37 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##   .. ..$ ccg                       : chr &quot;E38000240&quot;
 ##   .. ..$ ccg_id                    : chr &quot;93C&quot;
 ##   .. ..$ ced                       : chr &quot;E99999999&quot;
-##   .. ..$ nuts                      : chr &quot;UKI43&quot;
+##   .. ..$ nuts                      : chr &quot;TLI43&quot;
 ##   .. ..$ lsoa                      : chr &quot;E01002704&quot;
 ##   .. ..$ msoa                      : chr &quot;E02000576&quot;
-##   .. ..$ lau2                      : chr &quot;E05000367&quot;</code></pre>
+##   .. ..$ lau2                      : chr &quot;E09000019&quot;</code></pre>
 <p>This function creates a nested list with the codes for administrative district, county, ward, parish, parliamentary constituency, CCG, and NUTS.</p>
 </div>
 <div id="multiple-postcodes" class="section level3">
 <h3>Multiple postcodes</h3>
 <p>To query two or more postcodes, use <code>bulk_</code> functions.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>pc_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">postcodes =</span> <span class="kw">c</span>(<span class="st">&quot;PR3 0SG&quot;</span>, <span class="st">&quot;M45 6GN&quot;</span>, <span class="st">&quot;EX165BL&quot;</span>))</span>
-<span id="cb6-2"><a href="#cb6-2"></a>bulk_lookup_result &lt;-<span class="st"> </span><span class="kw">bulk_postcode_lookup</span>(pc_list)</span>
-<span id="cb6-3"><a href="#cb6-3"></a></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co">#overview</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">str</span>(bulk_lookup_result[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pc_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">postcodes =</span> <span class="fu">c</span>(<span class="st">&quot;PR3 0SG&quot;</span>, <span class="st">&quot;M45 6GN&quot;</span>, <span class="st">&quot;EX165BL&quot;</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>bulk_lookup_result <span class="ot">&lt;-</span> <span class="fu">bulk_postcode_lookup</span>(pc_list)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#overview</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(bulk_lookup_result[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 2
-##   ..$ query : chr &quot;PR3 0SG&quot;
-##   ..$ result:List of 24
-##   .. ..$ postcode                  : chr &quot;PR3 0SG&quot;
-##   .. ..$ quality                   : int 1
-##   .. ..$ eastings                  : int 351012
-##   .. ..$ northings                 : int 440302
-##   .. ..$ country                   : chr &quot;England&quot;
-##   .. ..$ nhs_ha                    : chr &quot;North West&quot;
-##   .. ..$ longitude                 : num -2.75
-##   .. ..$ latitude                  : num 53.9
-##   .. ..$ european_electoral_region : chr &quot;North West&quot;
-##   .. ..$ primary_care_trust        : chr &quot;North Lancashire Teaching&quot;
-##   .. ..$ region                    : chr &quot;North West&quot;
-##   .. ..$ lsoa                      : chr &quot;Wyre 006A&quot;
-##   .. ..$ msoa                      : chr &quot;Wyre 006&quot;
-##   .. ..$ incode                    : chr &quot;0SG&quot;
-##   .. ..$ outcode                   : chr &quot;PR3&quot;
-##   .. ..$ parliamentary_constituency: chr &quot;Wyre and Preston North&quot;
-##   .. ..$ admin_district            : chr &quot;Wyre&quot;
-##   .. ..$ parish                    : chr &quot;Myerscough and Bilsborrow&quot;
-##   .. ..$ admin_county              : chr &quot;Lancashire&quot;
-##   .. ..$ admin_ward                : chr &quot;Brock with Catterall&quot;
-##   .. ..$ ced                       : chr &quot;Wyre Rural East&quot;
-##   .. ..$ ccg                       : chr &quot;NHS Fylde and Wyre&quot;
-##   .. ..$ nuts                      : chr &quot;Lancaster and Wyre&quot;
-##   .. ..$ codes                     :List of 12
-##   .. .. ..$ admin_district            : chr &quot;E07000128&quot;
-##   .. .. ..$ admin_county              : chr &quot;E10000017&quot;
-##   .. .. ..$ admin_ward                : chr &quot;E05009934&quot;
-##   .. .. ..$ parish                    : chr &quot;E04005340&quot;
-##   .. .. ..$ parliamentary_constituency: chr &quot;E14001057&quot;
-##   .. .. ..$ ccg                       : chr &quot;E38000226&quot;
-##   .. .. ..$ ccg_id                    : chr &quot;02M&quot;
-##   .. .. ..$ ced                       : chr &quot;E58000832&quot;
-##   .. .. ..$ nuts                      : chr &quot;UKD44&quot;
-##   .. .. ..$ lsoa                      : chr &quot;E01025547&quot;
-##   .. .. ..$ msoa                      : chr &quot;E02005324&quot;
-##   .. .. ..$ lau2                      : chr &quot;E05009934&quot;</code></pre>
+##   ..$ query : chr &quot;PR3%200SG&quot;
+##   ..$ result: NULL</code></pre>
 <p>If you want to work with data frame then the nested list created above can be turned into a data frame</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">library</span>(purrr)</span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a>bulk_list &lt;-<span class="st"> </span><span class="kw">lapply</span>(bulk_lookup_result, <span class="st">&quot;[[&quot;</span>, <span class="dv">2</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a>bulk_df &lt;-</span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="st">  </span><span class="kw">map_dfr</span>(bulk_list,</span>
-<span id="cb8-7"><a href="#cb8-7"></a>          <span class="st">`</span><span class="dt">[</span><span class="st">`</span>,</span>
-<span id="cb8-8"><a href="#cb8-8"></a>          <span class="kw">c</span>(<span class="st">&quot;postcode&quot;</span>, <span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>bulk_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(bulk_lookup_result, <span class="st">&quot;[[&quot;</span>, <span class="dv">2</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>bulk_df <span class="ot">&lt;-</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_dfr</span>(bulk_list,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">[</span><span class="st">`</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>          <span class="fu">c</span>(<span class="st">&quot;postcode&quot;</span>, <span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>))</span></code></pre></div>
 <p>Querying Scottish postcodes requires a separate function:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>scottish_lookup &lt;-<span class="st"> </span><span class="kw">scottish_postcode_lookup</span>(<span class="st">&quot;EH12NG&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="kw">str</span>(scottish_lookup)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>scottish_lookup <span class="ot">&lt;-</span> <span class="fu">scottish_postcode_lookup</span>(<span class="st">&quot;EH12NG&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(scottish_lookup)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    1 obs. of  3 variables:
 ##  $ postcode                                : chr &quot;EH1 2NG&quot;
 ##  $ scottish_parliamentary_constituency     : chr &quot;Edinburgh Central&quot;
@@ -524,16 +303,16 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="outward-code-lookup" class="section level3">
 <h3>Outward code lookup</h3>
 <p>Provide an outcode to obtain geolocation data for the centroid of the specified outcode:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>ocl &lt;-<span class="st"> </span><span class="kw">outward_code_lookup</span>(<span class="st">&quot;E1&quot;</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="co">#overview</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">str</span>(ocl)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ocl <span class="ot">&lt;-</span> <span class="fu">outward_code_lookup</span>(<span class="st">&quot;E1&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#overview</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(ocl)</span></code></pre></div>
 <pre><code>## List of 10
 ##  $ outcode       : chr &quot;E1&quot;
 ##  $ longitude     : num -0.0595
 ##  $ latitude      : num 51.5
-##  $ northings     : int 181614
-##  $ eastings      : int 534739
+##  $ northings     : int 181613
+##  $ eastings      : int 534741
 ##  $ admin_district:List of 3
 ##   ..$ : chr &quot;Hackney&quot;
 ##   ..$ : chr &quot;City of London&quot;
@@ -543,7 +322,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##   ..$ : chr &quot;City of London, unparished area&quot;
 ##   ..$ : chr &quot;Tower Hamlets, unparished area&quot;
 ##  $ admin_county  : list()
-##  $ admin_ward    :List of 13
+##  $ admin_ward    :List of 14
 ##   ..$ : chr &quot;Shadwell&quot;
 ##   ..$ : chr &quot;Spitalfields &amp; Banglatown&quot;
 ##   ..$ : chr &quot;St Dunstan&#39;s&quot;
@@ -551,6 +330,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##   ..$ : chr &quot;Stepney Green&quot;
 ##   ..$ : chr &quot;Weavers&quot;
 ##   ..$ : chr &quot;Whitechapel&quot;
+##   ..$ : chr &quot;Bow West&quot;
 ##   ..$ : chr &quot;Bethnal Green&quot;
 ##   ..$ : chr &quot;Bishopsgate&quot;
 ##   ..$ : chr &quot;Hoxton East &amp; Shoreditch&quot;
@@ -566,10 +346,10 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>Provide latitude and longitude to obtain geographic information. Different levels of aggregation are available, i.e. postcode or outcode.</p>
 <div id="single-postcode-1" class="section level3">
 <h3>Single postcode</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>rev_geo &lt;-<span class="st"> </span><span class="kw">reverse_geocoding</span>(<span class="fl">0.127</span>, <span class="fl">51.507</span>)</span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># overview</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a><span class="kw">str</span>(rev_geo[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rev_geo <span class="ot">&lt;-</span> <span class="fu">reverse_geocoding</span>(<span class="fl">0.127</span>, <span class="fl">51.507</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># overview</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(rev_geo[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 25
 ##   ..$ postcode                  : chr &quot;SE28 8NH&quot;
@@ -604,32 +384,32 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##   .. ..$ ccg                       : chr &quot;E38000244&quot;
 ##   .. ..$ ccg_id                    : chr &quot;72Q&quot;
 ##   .. ..$ ced                       : chr &quot;E99999999&quot;
-##   .. ..$ nuts                      : chr &quot;UKI51&quot;
+##   .. ..$ nuts                      : chr &quot;TLI51&quot;
 ##   .. ..$ lsoa                      : chr &quot;E01000469&quot;
 ##   .. ..$ msoa                      : chr &quot;E02000065&quot;
-##   .. ..$ lau2                      : chr &quot;E05011232&quot;
+##   .. ..$ lau2                      : chr &quot;E09000004&quot;
 ##   ..$ distance                  : num 38.9</code></pre>
 </div>
 <div id="multiple-postcodes-1" class="section level3">
 <h3>Multiple postcodes</h3>
 <p>To reverse geocode multiple values use the function underneath. The result is a nested list, which might be a bit intimidating, but it allows storing unequal number of elements.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># create a list with the coordinates</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>geolocations_list &lt;-<span class="st"> </span><span class="kw">structure</span>(</span>
-<span id="cb15-3"><a href="#cb15-3"></a> <span class="kw">list</span>(</span>
-<span id="cb15-4"><a href="#cb15-4"></a> <span class="dt">geolocations =</span> <span class="kw">structure</span>(</span>
-<span id="cb15-5"><a href="#cb15-5"></a> <span class="kw">list</span>(</span>
-<span id="cb15-6"><a href="#cb15-6"></a> <span class="dt">longitude =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">3.15807731271522</span>, <span class="fl">-1.12935802905177</span>),</span>
-<span id="cb15-7"><a href="#cb15-7"></a> <span class="dt">latitude =</span> <span class="kw">c</span>(<span class="fl">51.4799900627036</span>, <span class="fl">50.7186356978817</span>),</span>
-<span id="cb15-8"><a href="#cb15-8"></a> <span class="dt">limit =</span> <span class="kw">c</span>(<span class="ot">NA</span>, 100L),</span>
-<span id="cb15-9"><a href="#cb15-9"></a> <span class="dt">radius =</span> <span class="kw">c</span>(<span class="ot">NA</span>, 500L)),</span>
-<span id="cb15-10"><a href="#cb15-10"></a> <span class="dt">.Names =</span> <span class="kw">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;limit&quot;</span>, <span class="st">&quot;radius&quot;</span>),</span>
-<span id="cb15-11"><a href="#cb15-11"></a> <span class="dt">class =</span> <span class="st">&quot;data.frame&quot;</span>,</span>
-<span id="cb15-12"><a href="#cb15-12"></a> <span class="dt">row.names =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)),</span>
-<span id="cb15-13"><a href="#cb15-13"></a> <span class="dt">.Names =</span> <span class="st">&quot;geolocations&quot;</span>)</span>
-<span id="cb15-14"><a href="#cb15-14"></a></span>
-<span id="cb15-15"><a href="#cb15-15"></a>bulk_rev_geo &lt;-<span class="st"> </span><span class="kw">bulk_reverse_geocoding</span>(geolocations_list)</span>
-<span id="cb15-16"><a href="#cb15-16"></a></span>
-<span id="cb15-17"><a href="#cb15-17"></a>bulk_rev_geo[[<span class="dv">1</span>]]<span class="op">$</span>result[[<span class="dv">1</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a list with the coordinates</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>geolocations_list <span class="ot">&lt;-</span> <span class="fu">structure</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a> <span class="at">geolocations =</span> <span class="fu">structure</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a> <span class="at">longitude =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.15807731271522</span>, <span class="sc">-</span><span class="fl">1.12935802905177</span>),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a> <span class="at">latitude =</span> <span class="fu">c</span>(<span class="fl">51.4799900627036</span>, <span class="fl">50.7186356978817</span>),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a> <span class="at">limit =</span> <span class="fu">c</span>(<span class="cn">NA</span>, 100L),</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a> <span class="at">radius =</span> <span class="fu">c</span>(<span class="cn">NA</span>, 500L)),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a> <span class="at">.Names =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;limit&quot;</span>, <span class="st">&quot;radius&quot;</span>),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a> <span class="at">class =</span> <span class="st">&quot;data.frame&quot;</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a> <span class="at">row.names =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)),</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a> <span class="at">.Names =</span> <span class="st">&quot;geolocations&quot;</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>bulk_rev_geo <span class="ot">&lt;-</span> <span class="fu">bulk_reverse_geocoding</span>(geolocations_list)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>bulk_rev_geo[[<span class="dv">1</span>]]<span class="sc">$</span>result[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## $postcode
 ## [1] &quot;CF24 2BT&quot;
 ## 
@@ -725,7 +505,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [1] &quot;W99999999&quot;
 ## 
 ## $codes$nuts
-## [1] &quot;UKL22&quot;
+## [1] &quot;TLL22&quot;
 ## 
 ## $codes$lsoa
 ## [1] &quot;W01001874&quot;
@@ -734,55 +514,55 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [1] &quot;W02000404&quot;
 ## 
 ## $codes$lau2
-## [1] &quot;W05000879&quot;
+## [1] &quot;W06000015&quot;
 ## 
 ## 
 ## $distance
 ## [1] 1.567236</code></pre>
 <p>The list above is not the most common way of storing files. It’s more likely that a data frame will be used to store the geodata. In that case, it has to be turned into a list of a specific format required by the API:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>geolocations_df &lt;-<span class="st"> </span><span class="kw">structure</span>(</span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="kw">list</span>(</span>
-<span id="cb17-3"><a href="#cb17-3"></a>    <span class="dt">longitude =</span> <span class="kw">c</span>(<span class="op">-</span><span class="fl">3.15807731271522</span>, <span class="fl">-1.12935802905177</span>),</span>
-<span id="cb17-4"><a href="#cb17-4"></a>    <span class="dt">latitude =</span> <span class="kw">c</span>(<span class="fl">51.4799900627036</span>, <span class="fl">50.7186356978817</span>),</span>
-<span id="cb17-5"><a href="#cb17-5"></a>    <span class="dt">limit =</span> <span class="kw">c</span>(<span class="ot">NA</span>, 100L),</span>
-<span id="cb17-6"><a href="#cb17-6"></a>    <span class="dt">radius =</span> <span class="kw">c</span>(<span class="ot">NA</span>, 500L)),</span>
-<span id="cb17-7"><a href="#cb17-7"></a>  <span class="dt">.Names =</span> <span class="kw">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;limit&quot;</span>, <span class="st">&quot;radius&quot;</span>),</span>
-<span id="cb17-8"><a href="#cb17-8"></a>  <span class="dt">row.names =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>,</span>
-<span id="cb17-9"><a href="#cb17-9"></a>  <span class="dt">class =</span> <span class="st">&quot;data.frame&quot;</span>)</span>
-<span id="cb17-10"><a href="#cb17-10"></a></span>
-<span id="cb17-11"><a href="#cb17-11"></a>geolocations_df</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>geolocations_df <span class="ot">&lt;-</span> <span class="fu">structure</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">longitude =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">3.15807731271522</span>, <span class="sc">-</span><span class="fl">1.12935802905177</span>),</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">latitude =</span> <span class="fu">c</span>(<span class="fl">51.4799900627036</span>, <span class="fl">50.7186356978817</span>),</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">limit =</span> <span class="fu">c</span>(<span class="cn">NA</span>, 100L),</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">radius =</span> <span class="fu">c</span>(<span class="cn">NA</span>, 500L)),</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">.Names =</span> <span class="fu">c</span>(<span class="st">&quot;longitude&quot;</span>, <span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;limit&quot;</span>, <span class="st">&quot;radius&quot;</span>),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">class =</span> <span class="st">&quot;data.frame&quot;</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>geolocations_df</span></code></pre></div>
 <pre><code>##   longitude latitude limit radius
 ## 1 -3.158077 51.47999    NA     NA
 ## 2 -1.129358 50.71864   100    500</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># turn a data frame into a list</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>geolocations_df2list &lt;-<span class="st"> </span><span class="kw">list</span>(geolocations_df)</span>
-<span id="cb19-3"><a href="#cb19-3"></a></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># add a list name</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="kw">names</span>(geolocations_df2list) &lt;-<span class="st"> &quot;geolocations&quot;</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># display correct input for the function</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a>geolocations_df2list</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># turn a data frame into a list</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>geolocations_df2list <span class="ot">&lt;-</span> <span class="fu">list</span>(geolocations_df)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add a list name</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(geolocations_df2list) <span class="ot">&lt;-</span> <span class="st">&quot;geolocations&quot;</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># display correct input for the function</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>geolocations_df2list</span></code></pre></div>
 <pre><code>## $geolocations
 ##   longitude latitude limit radius
 ## 1 -3.158077 51.47999    NA     NA
 ## 2 -1.129358 50.71864   100    500</code></pre>
 <p>Common usage of this function might be extracting particular variables. You can extract one variable like this:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># extract one postcode</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>bulk_rev_geo[[<span class="dv">1</span>]]<span class="op">$</span>result[[<span class="dv">8</span>]]<span class="op">$</span>postcode</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract one postcode</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>bulk_rev_geo[[<span class="dv">1</span>]]<span class="sc">$</span>result[[<span class="dv">8</span>]]<span class="sc">$</span>postcode</span></code></pre></div>
 <pre><code>## [1] &quot;CF24 2AL&quot;</code></pre>
 <p>But more likely you will want more than one result. After all, that’s the point of using a bulk function:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># function to extract variables of interest</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>extract_bulk_geo_variable &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb23-3"><a href="#cb23-3"></a>  bulk_results &lt;-<span class="st"> </span><span class="kw">lapply</span>(bulk_rev_geo, <span class="st">`</span><span class="dt">[[</span><span class="st">`</span>, <span class="st">&quot;result&quot;</span>)</span>
-<span id="cb23-4"><a href="#cb23-4"></a>  <span class="kw">sapply</span>(<span class="kw">unlist</span>(bulk_results, <span class="dt">recursive =</span> <span class="ot">FALSE</span>), <span class="st">`</span><span class="dt">[[</span><span class="st">`</span>, x)</span>
-<span id="cb23-5"><a href="#cb23-5"></a>}</span>
-<span id="cb23-6"><a href="#cb23-6"></a></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="co"># define the variables you need</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a>variables_of_interest &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;postcode&quot;</span>, <span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;longitude&quot;</span>)</span>
-<span id="cb23-9"><a href="#cb23-9"></a></span>
-<span id="cb23-10"><a href="#cb23-10"></a><span class="co"># return a data frame with the variables</span></span>
-<span id="cb23-11"><a href="#cb23-11"></a><span class="kw">data.frame</span>(</span>
-<span id="cb23-12"><a href="#cb23-12"></a>  <span class="kw">sapply</span>(variables_of_interest, extract_bulk_geo_variable))</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># function to extract variables of interest</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>extract_bulk_geo_variable <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  bulk_results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(bulk_rev_geo, <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, <span class="st">&quot;result&quot;</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(<span class="fu">unlist</span>(bulk_results, <span class="at">recursive =</span> <span class="cn">FALSE</span>), <span class="st">`</span><span class="at">[[</span><span class="st">`</span>, x)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># define the variables you need</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>variables_of_interest <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;postcode&quot;</span>, <span class="st">&quot;latitude&quot;</span>, <span class="st">&quot;longitude&quot;</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># return a data frame with the variables</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(variables_of_interest, extract_bulk_geo_variable))</span></code></pre></div>
 <pre><code>##    postcode  latitude longitude
 ## 1  CF24 2BT 51.479976 -3.158076
 ## 2  CF24 2ED 51.479691 -3.158688
@@ -809,9 +589,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </div>
 <div id="single-outcode" class="section level3">
 <h3>Single outcode</h3>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>out_rev_geocode &lt;-<span class="st"> </span><span class="kw">outcode_reverse_geocoding</span>(<span class="st">&quot;-3.15&quot;</span>, <span class="st">&quot;51.47&quot;</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="co"># overview</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="kw">str</span>(out_rev_geocode[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>out_rev_geocode <span class="ot">&lt;-</span> <span class="fu">outcode_reverse_geocoding</span>(<span class="st">&quot;-3.15&quot;</span>, <span class="st">&quot;51.47&quot;</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># overview</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(out_rev_geocode[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 10
 ##   ..$ outcode       : chr &quot;CF99&quot;
@@ -835,127 +615,19 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="postcodes" class="section level3">
 <h3>Postcodes</h3>
 <p>Generates a list with a random UK postcode and corresponding geographic information:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># without restrictions</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="kw">random_postcode</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># without restrictions</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">random_postcode</span>()</span></code></pre></div>
 <pre><code>## $postcode
-## [1] &quot;NN8 1QE&quot;
+## [1] &quot;N1 8FP&quot;
 ## 
 ## $quality
 ## [1] 1
 ## 
 ## $eastings
-## [1] 490117
+## [1] 531630
 ## 
 ## $northings
-## [1] 268259
-## 
-## $country
-## [1] &quot;England&quot;
-## 
-## $nhs_ha
-## [1] &quot;East Midlands&quot;
-## 
-## $longitude
-## [1] -0.679737
-## 
-## $latitude
-## [1] 52.30506
-## 
-## $european_electoral_region
-## [1] &quot;East Midlands&quot;
-## 
-## $primary_care_trust
-## [1] &quot;Northamptonshire Teaching&quot;
-## 
-## $region
-## [1] &quot;East Midlands&quot;
-## 
-## $lsoa
-## [1] &quot;Wellingborough 004D&quot;
-## 
-## $msoa
-## [1] &quot;Wellingborough 004&quot;
-## 
-## $incode
-## [1] &quot;1QE&quot;
-## 
-## $outcode
-## [1] &quot;NN8&quot;
-## 
-## $parliamentary_constituency
-## [1] &quot;Wellingborough&quot;
-## 
-## $admin_district
-## [1] &quot;Wellingborough&quot;
-## 
-## $parish
-## [1] &quot;Wellingborough, unparished area&quot;
-## 
-## $admin_county
-## [1] &quot;Northamptonshire&quot;
-## 
-## $admin_ward
-## [1] &quot;Victoria&quot;
-## 
-## $ced
-## [1] &quot;Finedon&quot;
-## 
-## $ccg
-## [1] &quot;NHS Northamptonshire&quot;
-## 
-## $nuts
-## [1] &quot;North Northamptonshire&quot;
-## 
-## $codes
-## $codes$admin_district
-## [1] &quot;E07000156&quot;
-## 
-## $codes$admin_county
-## [1] &quot;E10000021&quot;
-## 
-## $codes$admin_ward
-## [1] &quot;E05010042&quot;
-## 
-## $codes$parish
-## [1] &quot;E43000119&quot;
-## 
-## $codes$parliamentary_constituency
-## [1] &quot;E14001025&quot;
-## 
-## $codes$ccg
-## [1] &quot;E38000242&quot;
-## 
-## $codes$ccg_id
-## [1] &quot;78H&quot;
-## 
-## $codes$ced
-## [1] &quot;E58001133&quot;
-## 
-## $codes$nuts
-## [1] &quot;UKF25&quot;
-## 
-## $codes$lsoa
-## [1] &quot;E01027316&quot;
-## 
-## $codes$msoa
-## [1] &quot;E02005695&quot;
-## 
-## $codes$lau2
-## [1] &quot;E05010042&quot;</code></pre>
-<p>A randomly generated postcode can also belong to a particular outcode:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># restrict to an outcode</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="kw">random_postcode</span>(<span class="st">&quot;N1&quot;</span>)</span></code></pre></div>
-<pre><code>## $postcode
-## [1] &quot;N1 7JS&quot;
-## 
-## $quality
-## [1] 1
-## 
-## $eastings
-## [1] 532629
-## 
-## $northings
-## [1] 182920
+## [1] 183943
 ## 
 ## $country
 ## [1] &quot;England&quot;
@@ -964,10 +636,118 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [1] &quot;London&quot;
 ## 
 ## $longitude
-## [1] -0.0894
+## [1] -0.103385
 ## 
 ## $latitude
-## [1] 51.52962
+## [1] 51.53905
+## 
+## $european_electoral_region
+## [1] &quot;London&quot;
+## 
+## $primary_care_trust
+## [1] &quot;Islington&quot;
+## 
+## $region
+## [1] &quot;London&quot;
+## 
+## $lsoa
+## [1] &quot;Islington 020B&quot;
+## 
+## $msoa
+## [1] &quot;Islington 020&quot;
+## 
+## $incode
+## [1] &quot;8FP&quot;
+## 
+## $outcode
+## [1] &quot;N1&quot;
+## 
+## $parliamentary_constituency
+## [1] &quot;Islington South and Finsbury&quot;
+## 
+## $admin_district
+## [1] &quot;Islington&quot;
+## 
+## $parish
+## [1] &quot;Islington, unparished area&quot;
+## 
+## $admin_county
+## NULL
+## 
+## $admin_ward
+## [1] &quot;St Mary&#39;s&quot;
+## 
+## $ced
+## NULL
+## 
+## $ccg
+## [1] &quot;NHS North Central London&quot;
+## 
+## $nuts
+## [1] &quot;Haringey and Islington&quot;
+## 
+## $codes
+## $codes$admin_district
+## [1] &quot;E09000019&quot;
+## 
+## $codes$admin_county
+## [1] &quot;E99999999&quot;
+## 
+## $codes$admin_ward
+## [1] &quot;E05000379&quot;
+## 
+## $codes$parish
+## [1] &quot;E43000209&quot;
+## 
+## $codes$parliamentary_constituency
+## [1] &quot;E14000764&quot;
+## 
+## $codes$ccg
+## [1] &quot;E38000240&quot;
+## 
+## $codes$ccg_id
+## [1] &quot;93C&quot;
+## 
+## $codes$ced
+## [1] &quot;E99999999&quot;
+## 
+## $codes$nuts
+## [1] &quot;TLI43&quot;
+## 
+## $codes$lsoa
+## [1] &quot;E01002794&quot;
+## 
+## $codes$msoa
+## [1] &quot;E02000573&quot;
+## 
+## $codes$lau2
+## [1] &quot;E09000019&quot;</code></pre>
+<p>A randomly generated postcode can also belong to a particular outcode:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># restrict to an outcode</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">random_postcode</span>(<span class="st">&quot;N1&quot;</span>)</span></code></pre></div>
+<pre><code>## $postcode
+## [1] &quot;N1 6SB&quot;
+## 
+## $quality
+## [1] 1
+## 
+## $eastings
+## [1] 533320
+## 
+## $northings
+## [1] 183129
+## 
+## $country
+## [1] &quot;England&quot;
+## 
+## $nhs_ha
+## [1] &quot;London&quot;
+## 
+## $longitude
+## [1] -0.079365
+## 
+## $latitude
+## [1] 51.53134
 ## 
 ## $european_electoral_region
 ## [1] &quot;London&quot;
@@ -979,13 +759,13 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [1] &quot;London&quot;
 ## 
 ## $lsoa
-## [1] &quot;Hackney 027H&quot;
+## [1] &quot;Hackney 027B&quot;
 ## 
 ## $msoa
 ## [1] &quot;Hackney 027&quot;
 ## 
 ## $incode
-## [1] &quot;7JS&quot;
+## [1] &quot;6SB&quot;
 ## 
 ## $outcode
 ## [1] &quot;N1&quot;
@@ -1003,13 +783,13 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## NULL
 ## 
 ## $admin_ward
-## [1] &quot;Hoxton West&quot;
+## [1] &quot;Hoxton East &amp; Shoreditch&quot;
 ## 
 ## $ced
 ## NULL
 ## 
 ## $ccg
-## [1] &quot;NHS City and Hackney&quot;
+## [1] &quot;NHS North East London&quot;
 ## 
 ## $nuts
 ## [1] &quot;Hackney and Newham&quot;
@@ -1022,7 +802,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [1] &quot;E99999999&quot;
 ## 
 ## $codes$admin_ward
-## [1] &quot;E05009378&quot;
+## [1] &quot;E05009377&quot;
 ## 
 ## $codes$parish
 ## [1] &quot;E43000202&quot;
@@ -1031,52 +811,52 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ## [1] &quot;E14000721&quot;
 ## 
 ## $codes$ccg
-## [1] &quot;E38000035&quot;
+## [1] &quot;E38000255&quot;
 ## 
 ## $codes$ccg_id
-## [1] &quot;07T&quot;
+## [1] &quot;A3A8R&quot;
 ## 
 ## $codes$ced
 ## [1] &quot;E99999999&quot;
 ## 
 ## $codes$nuts
-## [1] &quot;UKI41&quot;
+## [1] &quot;TLI41&quot;
 ## 
 ## $codes$lsoa
-## [1] &quot;E01033709&quot;
+## [1] &quot;E01001777&quot;
 ## 
 ## $codes$msoa
 ## [1] &quot;E02000371&quot;
 ## 
 ## $codes$lau2
-## [1] &quot;E05009378&quot;</code></pre>
+## [1] &quot;E09000012&quot;</code></pre>
 </div>
 </div>
 <div id="places" class="section level2">
 <h2>Places</h2>
 <p>You can also generate a random place, specified by an OSGB code, with corresponding geographic information:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">random_place</span>()</span></code></pre></div>
-<pre><code>##                   code     name_1 name_1_lang name_2 name_2_lang    local_type
-## 1 osgb4000000074307557 Burngreave        NULL   NULL        NULL Suburban Area
-##   outcode county_unitary county_unitary_type district_borough
-## 1      S4           NULL                NULL        Sheffield
-##   district_borough_type                   region country longitude latitude
-## 1  MetropolitanDistrict Yorkshire and the Humber England -1.456125 53.39144
-##   eastings northings min_eastings min_northings max_eastings max_northings
-## 1   436267    388427       435383        387700       437287        389143</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">random_place</span>()</span></code></pre></div>
+<pre><code>##                   code            name_1 name_1_lang name_2 name_2_lang
+## 1 osgb4000000074563063 Titchfield Common        NULL   NULL        NULL
+##         local_type outcode county_unitary county_unitary_type district_borough
+## 1 Other Settlement    PO14      Hampshire              County          Fareham
+##   district_borough_type     region country longitude latitude eastings
+## 1              District South East England  -1.26567   50.852   451789
+##   northings min_eastings min_northings max_eastings max_northings
+## 1    106088       451073        105634       452928        107139</code></pre>
 </div>
 <div id="postcode-validation" class="section level2">
 <h2>Postcode validation</h2>
 <p>This function can validate a UK postcode:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">postcode_validation</span>(<span class="st">&quot;EC1Y 8LX&quot;</span>) <span class="co"># actual UK postcode</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">postcode_validation</span>(<span class="st">&quot;EC1Y8LX&quot;</span>) <span class="co"># actual UK postcode</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">postcode_validation</span>(<span class="st">&quot;XYZ&quot;</span>) <span class="co"># incorrect UK postcode</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">postcode_validation</span>(<span class="st">&quot;XYZ&quot;</span>) <span class="co"># incorrect UK postcode</span></span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 </div>
 <div id="autocomplete-postcodes" class="section level2">
 <h2>Autocomplete postcodes</h2>
 <p>Find the potential candidates for a postcode if you only know the beginning characters</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="kw">postcode_autocomplete</span>(<span class="st">&quot;EC1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">postcode_autocomplete</span>(<span class="st">&quot;EC1&quot;</span>)</span></code></pre></div>
 <pre><code>##    postcode
 ## 1  EC1A 1AA
 ## 2  EC1A 1AH
@@ -1093,10 +873,10 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="find-nearest-postcodes-or-outcodes" class="section level2">
 <h2>Find nearest postcodes or outcodes</h2>
 <p>Provide a postcode to get a list of the nearest postcodes:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>near_pc &lt;-<span class="st"> </span><span class="kw">nearest_postcode</span>(<span class="st">&quot;EC1Y 8LX&quot;</span>)</span>
-<span id="cb39-2"><a href="#cb39-2"></a></span>
-<span id="cb39-3"><a href="#cb39-3"></a><span class="co">#overview</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="kw">str</span>(near_pc[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>near_pc <span class="ot">&lt;-</span> <span class="fu">nearest_postcode</span>(<span class="st">&quot;EC1Y8LX&quot;</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">#overview</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(near_pc[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 25
 ##   ..$ postcode                  : chr &quot;EC1Y 8LX&quot;
@@ -1131,23 +911,23 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##   .. ..$ ccg                       : chr &quot;E38000240&quot;
 ##   .. ..$ ccg_id                    : chr &quot;93C&quot;
 ##   .. ..$ ced                       : chr &quot;E99999999&quot;
-##   .. ..$ nuts                      : chr &quot;UKI43&quot;
+##   .. ..$ nuts                      : chr &quot;TLI43&quot;
 ##   .. ..$ lsoa                      : chr &quot;E01002704&quot;
 ##   .. ..$ msoa                      : chr &quot;E02000576&quot;
-##   .. ..$ lau2                      : chr &quot;E05000367&quot;
+##   .. ..$ lau2                      : chr &quot;E09000019&quot;
 ##   ..$ distance                  : int 0</code></pre>
 <p>You can also use outcodes:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>near_outcode &lt;-<span class="st"> </span><span class="kw">nearest_outcode</span>(<span class="st">&quot;EC1Y&quot;</span>)</span>
-<span id="cb41-2"><a href="#cb41-2"></a></span>
-<span id="cb41-3"><a href="#cb41-3"></a><span class="co"># overview</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a><span class="kw">str</span>(near_outcode[<span class="dv">2</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>near_outcode <span class="ot">&lt;-</span> <span class="fu">nearest_outcode</span>(<span class="st">&quot;EC1Y&quot;</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># overview</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(near_outcode[<span class="dv">2</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 10
 ##   ..$ outcode       : chr &quot;EC2Y&quot;
-##   ..$ longitude     : num -0.0934
+##   ..$ longitude     : num -0.0935
 ##   ..$ latitude      : num 51.5
-##   ..$ northings     : int 181779
-##   ..$ eastings      : int 532378
+##   ..$ northings     : int 181777
+##   ..$ eastings      : int 532373
 ##   ..$ admin_district:List of 2
 ##   .. ..$ : chr &quot;Islington&quot;
 ##   .. ..$ : chr &quot;City of London&quot;
@@ -1165,17 +945,17 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 ##   ..$ country       :List of 1
 ##   .. ..$ : chr &quot;England&quot;</code></pre>
 <p>Or longitude and latitude</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>near_ll &lt;-<span class="st"> </span><span class="kw">nearest_outcode_lonlat</span>(<span class="fl">0.127</span>, <span class="fl">51.507</span>)</span>
-<span id="cb43-2"><a href="#cb43-2"></a></span>
-<span id="cb43-3"><a href="#cb43-3"></a><span class="co">#overview</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a><span class="kw">str</span>(near_ll[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>near_ll <span class="ot">&lt;-</span> <span class="fu">nearest_outcode_lonlat</span>(<span class="fl">0.127</span>, <span class="fl">51.507</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">#overview</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(near_ll[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 10
 ##   ..$ outcode       : chr &quot;DA18&quot;
 ##   ..$ longitude     : num 0.136
 ##   ..$ latitude      : num 51.5
-##   ..$ northings     : int 179421
-##   ..$ eastings      : int 548388
+##   ..$ northings     : int 179422
+##   ..$ eastings      : int 548389
 ##   ..$ admin_district:List of 1
 ##   .. ..$ : chr &quot;Bexley&quot;
 ##   ..$ parish        :List of 1
@@ -1190,38 +970,38 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="find-places" class="section level2">
 <h2>Find places</h2>
 <p>Provide a name of a place of interest. You can specify the number of results (default is 10):</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>place_query_result &lt;-<span class="st"> </span><span class="kw">place_query</span>(<span class="st">&quot;Hills&quot;</span>, <span class="dt">limit =</span> <span class="dv">11</span>)</span>
-<span id="cb45-2"><a href="#cb45-2"></a></span>
-<span id="cb45-3"><a href="#cb45-3"></a><span class="co"># overview</span></span>
-<span id="cb45-4"><a href="#cb45-4"></a><span class="kw">str</span>(place_query_result[<span class="dv">1</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>place_query_result <span class="ot">&lt;-</span> <span class="fu">place_query</span>(<span class="st">&quot;Hills&quot;</span>, <span class="at">limit =</span> <span class="dv">11</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="co"># overview</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(place_query_result[<span class="dv">1</span>])</span></code></pre></div>
 <pre><code>## List of 1
 ##  $ :List of 21
-##   ..$ code                 : chr &quot;osgb4000000074547803&quot;
-##   ..$ name_1               : chr &quot;Red Hills&quot;
+##   ..$ code                 : chr &quot;osgb4000000074574731&quot;
+##   ..$ name_1               : chr &quot;Berwick Hills&quot;
 ##   ..$ name_1_lang          : NULL
 ##   ..$ name_2               : NULL
 ##   ..$ name_2_lang          : NULL
-##   ..$ local_type           : chr &quot;Hamlet&quot;
-##   ..$ outcode              : chr &quot;CA11&quot;
-##   ..$ county_unitary       : chr &quot;Cumbria&quot;
-##   ..$ county_unitary_type  : chr &quot;County&quot;
-##   ..$ district_borough     : chr &quot;Eden&quot;
-##   ..$ district_borough_type: chr &quot;District&quot;
-##   ..$ region               : chr &quot;North West&quot;
+##   ..$ local_type           : chr &quot;Suburban Area&quot;
+##   ..$ outcode              : chr &quot;TS3&quot;
+##   ..$ county_unitary       : chr &quot;Middlesbrough&quot;
+##   ..$ county_unitary_type  : chr &quot;UnitaryAuthority&quot;
+##   ..$ district_borough     : NULL
+##   ..$ district_borough_type: NULL
+##   ..$ region               : chr &quot;North East&quot;
 ##   ..$ country              : chr &quot;England&quot;
-##   ..$ longitude            : num -2.77
-##   ..$ latitude             : num 54.7
-##   ..$ eastings             : int 350463
-##   ..$ northings            : int 528605
-##   ..$ min_eastings         : int 349916
-##   ..$ min_northings        : int 528349
-##   ..$ max_eastings         : int 350584
-##   ..$ max_northings        : int 528849</code></pre>
+##   ..$ longitude            : num -1.21
+##   ..$ latitude             : num 54.6
+##   ..$ eastings             : int 451459
+##   ..$ northings            : int 518602
+##   ..$ min_eastings         : int 450839
+##   ..$ min_northings        : int 517640
+##   ..$ max_eastings         : int 451963
+##   ..$ max_northings        : int 519361</code></pre>
 <p>You can also find a place using an OSGB code:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>place_lookup_result &lt;-<span class="st"> </span><span class="kw">place_lookup</span>(<span class="st">&quot;osgb4000000074544700&quot;</span>)</span>
-<span id="cb47-2"><a href="#cb47-2"></a></span>
-<span id="cb47-3"><a href="#cb47-3"></a><span class="co"># overview</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a><span class="kw">str</span>(place_lookup_result)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>place_lookup_result <span class="ot">&lt;-</span> <span class="fu">place_lookup</span>(<span class="st">&quot;osgb4000000074544700&quot;</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># overview</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(place_lookup_result)</span></code></pre></div>
 <pre><code>## List of 21
 ##  $ code                 : chr &quot;osgb4000000074544700&quot;
 ##  $ name_1               : chr &quot;Cutler Heights&quot;
@@ -1248,7 +1028,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="terminated-postcodes" class="section level2">
 <h2>Terminated postcodes</h2>
 <p>You might end up having terminated postcodes in your data set. These are postcodes that are no longer active. UK postcodes can change so it’s worth checking whether used postcodes are still active. If you need more information about when a particular postcode was terminated use:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">terminated_postcode</span>(<span class="st">&quot;E1W 1UU&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">terminated_postcode</span>(<span class="st">&quot;E1W 1UU&quot;</span>)</span></code></pre></div>
 <pre><code>##   postcode year_terminated month_terminated longitude latitude
 ## 1  E1W 1UU            2015                2 -0.073732 51.50801</code></pre>
 </div>

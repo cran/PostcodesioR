@@ -5,14 +5,13 @@ PostcodesioR
 
 [![Travis-CI Build
 Status](https://travis-ci.org/ropensci/PostcodesioR.svg?branch=master)](https://travis-ci.org/ropensci/PostcodesioR)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/ropensci/PostcodesioR/master.svg)](https://codecov.io/github/ropensci/PostcodesioR?branch=master)
 [![Package-License](https://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![](https://badges.ropensci.org/176_status.svg)](https://github.com/ropensci/software-review/issues/176)
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/PostcodesioR)](https://cran.r-project.org/package=PostcodesioR)
+[![DOI](https://zenodo.org/badge/64221541.svg)](https://zenodo.org/badge/latestdoi/64221541)
 ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/PostcodesioR)
 
 An API wrapper around [postcodes.io](https://postcodes.io/) - free UK
@@ -47,7 +46,7 @@ or
 if(!require("devtools")) {
   install.packages("devtools")
 }
-devtools::install_github("erzk/PostcodesioR")
+devtools::install_github("ropensci/PostcodesioR")
 ```
 
 ## Loading
@@ -110,10 +109,10 @@ str(lookup_result)
     ##  $ ccg_code                       : chr "E38000240"
     ##  $ ccg_id_code                    : chr "93C"
     ##  $ ced_code                       : chr "E99999999"
-    ##  $ nuts_code                      : chr "UKI43"
+    ##  $ nuts_code                      : chr "TLI43"
     ##  $ lsoa_code                      : chr "E01002704"
     ##  $ msoa_code                      : chr "E02000576"
-    ##  $ lau2_code                      : chr "E05000367"
+    ##  $ lau2_code                      : chr "E09000019"
 
 Check the
 [vignette](https://docs.ropensci.org/PostcodesioR/articles/Introduction.html)

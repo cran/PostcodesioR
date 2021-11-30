@@ -1,6 +1,6 @@
 ## ---- message = FALSE, warning = FALSE, eval = FALSE--------------------------
 #  if (!require("devtools")) install.packages("devtools")
-#  devtools::install_github("erzk/PostcodesioR")
+#  devtools::install_github("ropensci/PostcodesioR")
 
 ## ---- message = FALSE, warning = FALSE----------------------------------------
 library(PostcodesioR)
@@ -126,7 +126,7 @@ random_postcode("N1")
 random_place()
 
 ## -----------------------------------------------------------------------------
-postcode_validation("EC1Y 8LX") # actual UK postcode
+postcode_validation("EC1Y8LX") # actual UK postcode
 
 ## -----------------------------------------------------------------------------
 postcode_validation("XYZ") # incorrect UK postcode
@@ -135,7 +135,7 @@ postcode_validation("XYZ") # incorrect UK postcode
 postcode_autocomplete("EC1")
 
 ## -----------------------------------------------------------------------------
-near_pc <- nearest_postcode("EC1Y 8LX")
+near_pc <- nearest_postcode("EC1Y8LX")
 
 #overview
 str(near_pc[1])
